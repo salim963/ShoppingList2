@@ -1,7 +1,7 @@
 package com.example.shoppinglist.model
 
 import com.google.firebase.Timestamp
-
+//
 data class Notes(
     val userId: String = "",
     val title: String = "",

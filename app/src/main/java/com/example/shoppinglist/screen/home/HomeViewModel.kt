@@ -55,6 +55,7 @@ class HomeViewModel @Inject constructor(
 
 }
 
+
 data class HomeUiState(
     val notesList: Resources<List<Notes>> = Resources.Loading(),
     val noteDeletedStatus: Boolean = false,

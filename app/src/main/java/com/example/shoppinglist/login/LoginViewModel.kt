@@ -16,7 +16,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val repository: AuthRepository
 ) : ViewModel() {
-    val currentUser = repository.currentUser
+//    val currentUser = repository.currentUser
 
     val hasUser: Boolean
         get() = repository.hasUser()
@@ -44,6 +44,8 @@ class LoginViewModel @Inject constructor(
         loginUiState = loginUiState.copy(confirmPasswordSignUp = password)
     }
 
+
+
     private fun validateLoginForm() =
         loginUiState.userName.isNotBlank() &&
                 loginUiState.password.isNotBlank()
@@ -52,6 +54,8 @@ class LoginViewModel @Inject constructor(
         loginUiState.userNameSignUp.isNotBlank() &&
                 loginUiState.passwordSignUp.isNotBlank() &&
                 loginUiState.confirmPasswordSignUp.isNotBlank()
+
+
 
 
     fun createUser(context: Context) = viewModelScope.launch {
@@ -90,7 +94,6 @@ class LoginViewModel @Inject constructor(
 
             }
 
-
         } catch (e: Exception) {
             loginUiState = loginUiState.copy(signUpError = e.localizedMessage)
             e.printStackTrace()
@@ -100,6 +103,8 @@ class LoginViewModel @Inject constructor(
 
 
     }
+
+
 
     fun loginUser(context: Context) = viewModelScope.launch {
         try {
@@ -140,6 +145,8 @@ class LoginViewModel @Inject constructor(
 
 
     }
+
+
 
     fun logout() = viewModelScope.launch {
         repository.logout()

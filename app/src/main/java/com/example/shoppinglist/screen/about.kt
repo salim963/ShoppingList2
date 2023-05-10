@@ -21,7 +21,7 @@ fun AboutScreen() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "ABOUT",
+            text = "About",
             fontSize = MaterialTheme.typography.h3.fontSize,
             fontWeight = FontWeight.Bold,
             color = Color.White

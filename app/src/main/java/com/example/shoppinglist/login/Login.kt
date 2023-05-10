@@ -47,7 +47,7 @@ fun LoginScreen(
             contentDescription = "Logo",
             modifier = Modifier
                 .padding(top = 30.dp)
-                .size(90.dp),
+                .size(80.dp),
             contentScale = ContentScale.Crop,
         )
         Text(
@@ -77,7 +77,7 @@ fun LoginScreen(
                 )
             },
             label = {
-                Text(text = "Email")
+                Text(text = "Your email")
             },
 
             colors = TextFieldDefaults.outlinedTextFieldColors(
@@ -85,6 +85,7 @@ fun LoginScreen(
                 unfocusedBorderColor = Gray,
                 focusedLabelColor =floatingB,
                 cursorColor =floatingB,
+                trailingIconColor = floatingB
             ),
             isError = isError
         )
@@ -101,7 +102,7 @@ fun LoginScreen(
                 )
             },
             label = {
-                Text(text = "Password")
+                Text(text = "Your password")
             },
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = floatingB,
@@ -125,6 +126,7 @@ fun LoginScreen(
         ) {
             Text(text = "Don't have an Account?",  modifier = Modifier.padding(top = 12.dp))
             Spacer(modifier = Modifier.size(8.dp))
+
             TextButton(onClick = { onNavToSignUpPage.invoke() },
                 colors = ButtonDefaults.buttonColors(
                     contentColor = floatingB, backgroundColor = Color.Transparent)
@@ -288,17 +290,12 @@ fun SignUpScreen(
                 onNavToHomePage.invoke()
             }
         }
-
-
-
-
-
-
-
     }
-
-
 }
+
+
+
+
 
 @Preview(showSystemUi = true)
 @Composable

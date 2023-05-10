@@ -43,6 +43,7 @@ class DetailViewModel @Inject constructor(
     fun addNote(){
         if(hadUser){
             repository.addNote(
+                // we can also use user?.uid?,
                userId= user!!.uid,
                title = detailUiState.title,
                description = detailUiState.note,

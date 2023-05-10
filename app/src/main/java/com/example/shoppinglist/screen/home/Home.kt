@@ -3,7 +3,6 @@ package com.example.shoppinglist.screen.home
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -124,7 +123,7 @@ fun Home(
                             IconButton(onClick = {
                                 scope.launch {
                                     scaffoldState.drawerState.open()
-                                    LocalLayoutDirection provides LayoutDirection.Rtl
+                                    //LocalLayoutDirection provides LayoutDirection.Ltr
                                 }
                             }) {
                                 Icon(
@@ -224,7 +223,9 @@ fun Home(
                             CircularProgressIndicator(
                                 modifier = Modifier
                                     .fillMaxSize()
-                                    .wrapContentSize(align = Alignment.Center)
+                                    .wrapContentSize(align = Alignment.Center),
+                                        color = floatingB
+
                             )
                         }
                         is Resources.Success -> {
@@ -307,6 +308,8 @@ fun Home(
         }
     }
 }
+
+
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

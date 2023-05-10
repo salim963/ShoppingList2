@@ -82,7 +82,6 @@ fun DetailScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                // .background(color = Color.LightGray)
                 .padding(padding)
         ) {
             if (detailUiState.noteAddedStatus) {
@@ -142,7 +141,7 @@ fun DetailScreen(
             OutlinedTextField(
                 value = detailUiState.note,
                 onValueChange = { detailViewModel?.onNoteChange(it) },
-                label = { Text(text = "Lists") },
+                label = { Text(text = "Text") },
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
@@ -191,7 +190,7 @@ fun ColorItem(
 }
 
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun PrevDetailScreen() {
     ShoppingListTheme {

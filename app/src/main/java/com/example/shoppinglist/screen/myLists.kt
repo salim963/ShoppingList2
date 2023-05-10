@@ -21,7 +21,7 @@ fun MyListScreen() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "PROFILE",
+            text = "Favorite",
             fontSize = MaterialTheme.typography.h3.fontSize,
             fontWeight = FontWeight.Bold,
             color = Color.White

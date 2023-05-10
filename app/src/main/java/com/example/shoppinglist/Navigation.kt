@@ -28,7 +28,7 @@ enum class NestedRoutes {
     Main,
     Login
 }
-
+//
 
 @Composable
 fun Navigation(
@@ -48,7 +48,6 @@ fun Navigation(
             homeViewModel
         )
     }
-
 
 }
 
@@ -100,6 +99,9 @@ fun NavGraphBuilder.authGraph(
 
 }
 
+
+
+
 fun NavGraphBuilder.homeGraph(
     navController: NavHostController,
     detailViewModel: DetailViewModel,
@@ -134,9 +136,6 @@ fun NavGraphBuilder.homeGraph(
 
 
         }
-
-
-
         composable(
             route = HomeRoutes.Detail.name + "?id={id}",
             arguments = listOf(navArgument("id"){
@@ -150,19 +149,9 @@ fun NavGraphBuilder.homeGraph(
                 noteId = entry.arguments?.getString("id") as String,
             ) {
                 navController.navigateUp()
-
             }
-
-
         }
-
-
-
     }
-
-
-
-
 }
 
 

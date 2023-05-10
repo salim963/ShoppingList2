@@ -2,10 +2,7 @@ package com.example.shoppinglist.repository
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -21,7 +18,7 @@ import javax.inject.Inject
 class AuthRepository @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) {
-
+    //look for currentUser, currentUser can be nullable
     val currentUser: FirebaseUser? = firebaseAuth.currentUser
 
     /**
@@ -36,6 +33,8 @@ class AuthRepository @Inject constructor(
      *
      * @return
      */
+    //firebaseAuth.currentUser?.uid returns the user ID
+    //of the currently logged-in user if there is one, or null if there isn't.
     fun getUserId(): String = firebaseAuth.currentUser?.uid.orEmpty()
 
 
